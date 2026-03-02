@@ -3,15 +3,27 @@ scene_order:
   - nhl_fav_team_next_game
   - nba_fav_team_next_game
   - pwhl_fav_team_next_game
+  # - nfl_fav_team_next_game
+  # - cfb_fav_team_next_game
+  # - mlb_fav_team_next_game
   - nhl_games
   - nba_games
   - pwhl_games
+  # - nfl_games
+  # - cfb_games
+  # - mlb_games
   - nhl_fav_team_next_game
   - nba_fav_team_next_game
   - pwhl_fav_team_next_game
+  # - nfl_fav_team_next_game
+  # - cfb_fav_team_next_game
+  # - mlb_fav_team_next_game
   - nhl_standings
   - nba_standings
   - pwhl_standings
+  # - nfl_standings
+  # - cfb_standings
+  # - mlb_standings
 
 
 # Note your favourite teams by league. Any number of teams can be specified.
@@ -21,6 +33,12 @@ favourite_teams:
   nba:
     # - TOR # Example.
   pwhl:
+    # - TOR # Example.
+  nfl:
+    # - KC # Example.
+  cfb:
+    # - MICH # Example.
+  mlb:
     # - TOR # Example.
 
 
@@ -32,6 +50,9 @@ alt_logos:
     # UTA: 2004 # Example.
   pwhl:
     # TOR: 2024 # Example. There's no alt logos for PWHL yet. Including this here for future use.
+  nfl:
+  cfb:
+  mlb:
 
 
 # Settings for each scene.
@@ -135,7 +156,105 @@ scene_settings:
       highlight_fav_teams: True
       display_for:
         - league
-        
+
+  nfl:
+    games: # nfl_games scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      game_display_duration: 3.5
+      score_alerting:
+        score_coloured: true
+        score_fade_animation: true
+      rollover:
+        rollover_start_time_local: '07:00'
+        show_completed_games_until_rollover_end_time: True
+        rollover_end_time_local: '12:00'
+
+    fav_team_next_game: # nfl_fav_team_next_game scene.
+      transition: 'modern'
+      display_duration: 3.5
+      display_if_in_progress: False
+
+    standings: # nfl_standings scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      scroll:
+        scroll_pause_duration: 1
+        scroll_frame_duration: 0.075
+      highlight_fav_teams: True
+      display_for:
+        - division
+        # - conference
+
+  cfb:
+    games: # cfb_games scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      game_display_duration: 3.5
+      score_alerting:
+        score_coloured: true
+        score_fade_animation: true
+      rollover:
+        rollover_start_time_local: '07:00'
+        show_completed_games_until_rollover_end_time: True
+        rollover_end_time_local: '12:00'
+
+    fav_team_next_game: # cfb_fav_team_next_game scene.
+      transition: 'modern'
+      display_duration: 3.5
+      display_if_in_progress: False
+
+    standings: # cfb_standings scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      scroll:
+        scroll_pause_duration: 1
+        scroll_frame_duration: 0.075
+      highlight_fav_teams: True
+      display_for:
+        - conference
+
+  mlb:
+    games: # mlb_games scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      game_display_duration: 3.5
+      score_alerting:
+        score_coloured: true
+        score_fade_animation: true
+      rollover:
+        rollover_start_time_local: '07:00'
+        show_completed_games_until_rollover_end_time: True
+        rollover_end_time_local: '12:00'
+
+    fav_team_next_game: # mlb_fav_team_next_game scene.
+      transition: 'modern'
+      display_duration: 3.5
+      display_if_in_progress: False
+
+    standings: # mlb_standings scene.
+      transition: 'modern'
+      splash:
+        display_splash: True
+        splash_display_duration: 2
+      scroll:
+        scroll_pause_duration: 1
+        scroll_frame_duration: 0.075
+      highlight_fav_teams: True
+      display_for:
+        - division
+        # - league
+
 
 # Brightness settings.
 brightness:
